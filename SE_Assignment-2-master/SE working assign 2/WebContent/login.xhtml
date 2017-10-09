@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Login</title>
+</h:head>
+<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	</meta>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	</link>
+<h:body>
+<div align="center">
+    <f:view>
+        <h:form id="loginForm">
+            <table frame="box">
+                <tr>
+                    <th>Login Page</th>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter Your Name : " /></td>
+                    <td><h:inputText id="inputName" value="#{Controller.name}"
+                            required="true" requiredMessage="Name field must not be empty" />
+                    </td>
+                    <td><h:message for="inputName" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter password :" /></td>
+                    <td><h:inputSecret id="inputPassword" value="#{Controller.password}"
+                            required="true"
+                            requiredMessage="Password field must not be empty" /></td>
+                    <td><h:message for="inputPassword" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:commandButton value="Sign In" action="#{Controller.LoginController}" /></td>
+                    <td><h:outputText value="Not a User " /> 
+                        <h:outputLink value="register.xhtml">Sign Up</h:outputLink>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </f:view>
+    </div>
+</h:body>
+</html>
